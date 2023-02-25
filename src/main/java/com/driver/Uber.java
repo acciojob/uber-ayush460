@@ -10,7 +10,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Uber {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Uber.class, args);
+
+        SpringApplication.run(Uber.class, args);
 	}
 
 }
