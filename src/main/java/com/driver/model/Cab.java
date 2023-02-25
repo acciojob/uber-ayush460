@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 public class Cab {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int perKmRate;
     private boolean available;
@@ -16,11 +16,10 @@ public class Cab {
     public Cab() {
     }
 
-    public Cab(int id, int perKmRate, boolean available, Driver driver) {
+    public Cab(int id, int perKmRate, boolean available) {
         this.id = id;
         this.perKmRate = perKmRate;
         this.available = available;
-        this.driver = driver;
     }
 
     public Cab(int perKmRate) {

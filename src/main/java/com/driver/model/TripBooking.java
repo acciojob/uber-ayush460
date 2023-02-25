@@ -2,8 +2,7 @@ package com.driver.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="train_booking")
+
 public class TripBooking{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +20,14 @@ private int bill;
     @JoinColumn
     private Customer customer;
     public TripBooking() {
+    }
+
+    public TripBooking(String toLocation, String fromLocation, int distanceInKm, int bill, TripStatus status) {
+        this.toLocation = toLocation;
+        this.fromLocation = fromLocation;
+        this.distanceInKm = distanceInKm;
+        this.bill = bill;
+        this.status = status;
     }
 
     public int getBill() {
