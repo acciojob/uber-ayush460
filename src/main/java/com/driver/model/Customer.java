@@ -13,17 +13,31 @@ public class Customer{
     private String password;
     private String mobile;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<TripBooking> trainBookingList=new ArrayList<>();
+    private List<TripBooking> tripBookingList=new ArrayList<>();
 
     public Customer() {
     }
 
-    public List<TripBooking> getTrainBookingList() {
-        return trainBookingList;
+    public Customer(int customerId, String password, String mobile) {
+        this.customerId = customerId;
+        this.password = password;
+        this.mobile = mobile;
     }
 
-    public void setTrainBookingList(List<TripBooking> trainBookingList) {
-        this.trainBookingList = trainBookingList;
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
     }
 
     public int getCustomerId() {
@@ -42,11 +56,5 @@ public class Customer{
         this.password = password;
     }
 
-    public String getMobile() {
-        return mobile;
-    }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
 }
